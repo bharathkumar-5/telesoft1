@@ -1,115 +1,68 @@
- body {
-    background: url('https://i.etsystatic.com/23486410/r/il/4310b6/3642750090/il_fullxfull.3642750090_383a.jpg') no-repeat center center fixed;
-    background-size: cover;
-    color: #fff;
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
-    animation: fadeIn 1s ease-in-out;
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
   }
-  
-  @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+  a:hover {
+    color: #747bff;
   }
-  
-  // src/styles.css
-  .navbar {
-    background: linear-gradient(90deg, #1e3c72, #2a5298);
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: white;
-    font-size: 22px;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
-    animation: slideDown 0.5s ease-in-out;
+  button {
+    background-color: #f9f9f9;
   }
-  
-  @keyframes slideDown {
-    from { transform: translateY(-100%); }
-    to { transform: translateY(0); }
-  }
-  
-  .navbar a {
-    color: white;
-    text-decoration: none;
-    margin-right: 25px;
-    font-weight: bold;
-    transition: color 0.3s;
-  }
-  
-  .navbar a:hover {
-    color: #ffeb3b;
-    text-shadow: 0px 0px 10px #ffeb3b;
-  }
-  
-  .navbar button {
-    background: red;
-    color: white;
-    border: none;
-    padding: 15px 30px;
-    cursor: pointer;
-    border-radius: 10px;
-    font-weight: bold;
-    transition: all 0.3s;
-  }
-  
-  .navbar button:hover {
-    background: darkred;
-    transform: scale(1.1);
-  }
-  
-  .login-box {
-    width: 400px;
-    margin: 100px auto;
-    padding: 30px;
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 15px;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(10px);
-    animation: popIn 0.5s ease-in-out;
-  }
-  
-  @keyframes popIn {
-    from { transform: scale(0.8); opacity: 0; }
-    to { transform: scale(1); opacity: 1; }
-  }
-  
-  .book-card {
-    border: 1px solid #ddd;
-    padding: 30px;
-    border-radius: 15px;
-    background: rgba(255, 255, 255, 0.2);
-    box-shadow: 3px 6px 20px rgba(0, 0, 0, 0.2);
-    transition: all 0.4s ease-in-out;
-    backdrop-filter: blur(5px);
-    animation: zoomIn 0.5s ease-in-out;
-  }
-  
-  @keyframes zoomIn {
-    from { transform: scale(0.5); opacity: 0; }
-    to { transform: scale(1); opacity: 1; }
-  }
-  
-  .book-card:hover {
-    transform: scale(1.1);
-    box-shadow: 5px 10px 25px rgba(0, 0, 0, 0.3);
-  }
-  
-  .book-card h2 {
-    font-size: 26px;
-    font-weight: bold;
-    color: #ed2745;
-  }
-  
-  .book-card a {
-    color: cyan;
-    text-decoration: none;
-    font-weight: bold;
-    transition: text-shadow 0.3s;
-  }
-  
-  .book-card a:hover {
-    text-shadow: 0px 0px 15px cyan;
-  }
+}

@@ -1,0 +1,36 @@
+.dashboard-container {
+    padding: 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 80px; /* To account for the fixed navbar */
+    margin-bottom: 80px; /* To account for the fixed footer */
+  }
+  
+  .dashboard-container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #111827;
+  }
+  
+  .filters {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .filters input,
+  .filters select {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .books-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+  }

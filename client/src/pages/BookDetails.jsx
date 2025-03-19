@@ -1,21 +1,41 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import "../App.css";
+import "../styles/BookDetails.css"
+import { showToast } from "../components/Toast";
 
 const BookDetails = () => {
   const { id } = useParams();
   const [book, setBook] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    axios.get(`https://telesoftt-1.onrender.com/api/books/${id}`).then((res) => setBook(res.data));
+    const fetchBookDetails = async () => {
+      try {
+        const res = await axios.get(`https://telesoftt-1.onrender.com/api/books/${id}`);
+        setBook(res.data);
+      } catch (err) {
+        showToast(err,"Error fetching book details", "error");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchBookDetails();
   }, [id]);
 
-  if (!book) return <p>Loading...</p>;
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (!book) {
+    return <div>Book not found</div>;
+  }
 
   return (
     <div className="book-details-container">
-      <h1 className="page-title">{book.title}</h1>
+      <h1>{book.title}</h1>
+      <img src={book.coverImage} alt={book.title} className="book-cover" />
       <div className="book-info">
         <p><strong>Author:</strong> {book.author}</p>
         <p><strong>Genre:</strong> {book.genre}</p>

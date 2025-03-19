@@ -1,11 +1,18 @@
 /* General Styles */
-body {
-  background: linear-gradient(120deg, #a1c4fd, #c2e9fb);
-  color: #111827;
-  font-family: "Poppins", sans-serif;
+html, body, #root {
+  height: 100%;
   margin: 0;
   padding: 0;
-  transition: all 0.3s ease-in-out;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(120deg, #a1c4fd, #c2e9fb);
+  display: flex;
+  flex-direction: column;
+}
+
+#root {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .page-title {
@@ -13,6 +20,7 @@ body {
   font-weight: bold;
   margin-bottom: 1.5rem;
   text-align: center;
+  color: #111827;
 }
 
 .form-container {
@@ -21,6 +29,10 @@ body {
   gap: 1rem;
   max-width: 400px;
   margin: 0 auto;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .form-input {
@@ -45,118 +57,11 @@ body {
   background-color: #0056b3;
 }
 
-/* Navbar Styles */
-.navbar {
-  background: #007bff;
-  padding: 15px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  color: white;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease-in-out;
-}
-
-.nav-links {
-  display: flex;
-  gap: 1rem;
-}
-
-.navbar a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s ease-in-out;
-}
-
-.navbar a:hover {
-  color: yellow;
-}
-
-.logout-btn {
-  background-color: red;
-  color: white;
-  border: none;
-  padding: 8px 12px;
-  cursor: pointer;
-  font-size: 16px;
-  border-radius: 5px;
-  transition: all 0.3s ease-in-out;
-}
-
-.logout-btn:hover {
-  background-color: darkred;
-}
-
-/* Book Card Styles */
-.book-card {
-  border: 1px solid #ddd;
-  padding: 20px;
-  border-radius: 10px;
-  background-color: white;
-  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease-in-out;
-  transform: scale(1);
-}
-
-.book-card:hover {
-  transform: scale(1.05);
-}
-
-.book-title {
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin-bottom: 0.5rem;
-}
-
-.view-details {
-  color: blue;
-  text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s ease;
-}
-
-.view-details:hover {
-  text-decoration: underline;
-}
-
-/* Dashboard Styles */
-.dashboard-container {
-  padding: 2rem;
-}
-
-.books-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 1.5rem;
-}
-
-.book-link {
-  text-decoration: none;
-  color: inherit;
-}
-
-/* Add Book Styles */
-.add-book-container {
-  padding: 2rem;
-}
-
-/* Book Details Styles */
-.book-details-container {
-  padding: 2rem;
-}
-
-.book-info {
-  background-color: white;
-  padding: 1.5rem;
-  border-radius: 10px;
-  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-/* Login Styles */
-.login-container {
-  padding: 2rem;
+/* Full-screen layout */
+.full-screen {
+  height: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
 }

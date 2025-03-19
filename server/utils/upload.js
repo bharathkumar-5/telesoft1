@@ -1,33 +1,19 @@
-const multer = require('multer');
-const path = require('path');
+const multer = require("multer");
+const path = require("path");
 
-// Set up storage engine for multer
+// Configure storage for uploaded files
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, 'uploads/'); // Save files in the 'uploads' folder
+    cb(null, "uploads/"); // Save files in the "uploads" folder
   },
   filename: (req, file, cb) => {
-    cb(null, `${Date.now()}-${file.originalname}`); // Rename file to avoid conflicts
+    cb(null, Date.now() + path.extname(file.originalname)); // Append timestamp to filename
   },
 });
 
-// File filter to allow only images and PDFs
-const fileFilter = (req, file, cb) => {
-  const filetypes = /jpeg|jpg|png|gif|pdf/; // Allow images and PDFs
-  const extname = filetypes.test(path.extname(file.originalname).toLowerCase());
-  const mimetype = filetypes.test(file.mimetype);
-
-  if (mimetype && extname) {
-    cb(null, true);
-  } else {
-    cb(new Error('Only images and PDFs are allowed'), false);
-  }
-};
-
-// Initialize upload
+// Initialize upload middleware
 const upload = multer({
   storage,
-  fileFilter,
   limits: { fileSize: 10 * 1024 * 1024 }, // Limit file size to 10MB
 });
 
